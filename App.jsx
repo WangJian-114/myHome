@@ -1,19 +1,30 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Login from './components/login/Login';
 
+const Stack = createNativeStackNavigator();
+
 const App = () => {
-  console.log('CONSOEL HOLA');
+  console.log('CONSOEL HOLA DESDE APP');
   return (
     <>
-      <Login />
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Login">
+          <Stack.Screen
+            name="Login"
+            component={Login}
+            options={{
+              title: '',
+              headerStyle: {
+                backgroundColor: '#159690',
+              },
+              headerTransparent: true,
+            }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </>
   );
 };

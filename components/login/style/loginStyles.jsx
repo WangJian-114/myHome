@@ -30,7 +30,7 @@ const loginStyles = StyleSheet.create({
     color: 'white',
   },
   topSection: {
-    marginTop: 200,
+    marginTop: 170,
   },
   realStateButton: {
     backgroundColor: '#71c3ca',
