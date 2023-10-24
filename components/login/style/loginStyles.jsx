@@ -22,7 +22,7 @@ const loginStyles = StyleSheet.create({
   },
   logo: {
     width: '100%',
-    height: 230,
+    height: 205,
     marginBottom: 50,
   },
   message: {
