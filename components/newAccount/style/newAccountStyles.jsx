@@ -7,70 +7,46 @@ const loginStyles = StyleSheet.create({
     backgroundColor: '#159690',
     height: '100%',
   },
-  loginContainer: {
+  newAccountContainer: {
     height: '100%',
     display: 'flex',
     justifyContent: 'space-between',
     paddingHorizontal: 41,
   },
-  logoContainer: {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    paddingHorizontal: 41,
-  },
-  logo: {
-    width: '100%',
-    height: 205,
-    marginBottom: 50,
-  },
   message: {
     fontSize: 24,
     fontWeight: 'semibold',
     color: 'white',
-  },
-  googleButton: {
-    marginTop: 30,
-    backgroundColor: '#71c3ca',
-    paddingVertical: 15,
-    borderRadius: 10,
-  },
-  googleButtonText: {
-    fontSize: 20,
     textAlign: 'center',
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'regular',
     color: 'white',
+    textAlign: 'center',
+    marginTop: 15,
   },
   topSection: {
-    marginTop: 50,
+    marginTop: 100,
   },
-  realStateButton: {
+  continueButton: {
     backgroundColor: '#71c3ca',
     paddingVertical: 15,
     borderRadius: 10,
-    paddingHorizontal: 60,
     marginBottom: 50,
   },
-  realStateButtonText: {
+  continueButtonText: {
     fontSize: 20,
     textAlign: 'center',
     color: 'white',
   },
-  loginTextInput: {
+  textInput: {
     fontSize: 16,
-    marginTop: 15,
+    marginTop: 20,
     padding: 15,
-    borderRadius: 10,
+    borderRadius: 95,
     backgroundColor: '#FFF',
     width: 'auto',
-  },
-  NoAcount: {
-    marginBottom: 10,
-    color: 'white',
-  },
-  forgetPass: {
-    textAlign: 'right',
-    marginTop: 10,
-    color: 'white',
   },
 });
 
