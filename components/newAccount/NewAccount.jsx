@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, SafeAreaView, Pressable, Image} from 'react-native';
+import {Text, View, SafeAreaView, Pressable, TextInput} from 'react-native';
 
-import loginStyles from './style/loginStyles';
+import newAccountStyles from './style/newAccountStyles';
 
 const Login = ({navigation}) => {
   const loginRealState = () => {
@@ -11,25 +11,43 @@ const Login = ({navigation}) => {
 
   return (
     <>
-      <SafeAreaView style={loginStyles.mainContainer}>
-        <View style={loginStyles.loginContainer}>
-          <View style={loginStyles.topSection}>
-            <Text style={loginStyles.message}>Registro de Inmobiliaria</Text>
-            <Pressable
-              onPress={() => console.log('Ingreso User --')}
-              style={loginStyles.googleButton}>
-              <Text style={loginStyles.googleButtonText}>
-                Ingreso con Google
-              </Text>
-            </Pressable>
+      <SafeAreaView style={newAccountStyles.mainContainer}>
+        <View style={newAccountStyles.newAccountContainer}>
+          <View style={newAccountStyles.topSection}>
+            <Text style={newAccountStyles.message}>
+              Registro de Inmobiliaria
+            </Text>
+            <Text style={newAccountStyles.text}>
+              Complete los siguientes datos
+            </Text>
+            <TextInput
+              placeholder="Nombre Inmobiliaria"
+              style={newAccountStyles.textInput}
+            />
+            <TextInput
+              placeholder="Correo electronico"
+              style={newAccountStyles.textInput}
+            />
+            <TextInput
+              placeholder="Contraseña"
+              style={newAccountStyles.textInput}
+            />
+            <TextInput
+              placeholder="Repetir contraseña"
+              style={newAccountStyles.textInput}
+            />
+            <TextInput
+              placeholder="Mail de contacto"
+              style={newAccountStyles.textInput}
+            />
           </View>
 
           <View>
             <Pressable
               onPress={() => loginRealState()}
-              style={loginStyles.realStateButton}>
-              <Text style={loginStyles.realStateButtonText}>
-                Ingreso Inmobiliarias
+              style={newAccountStyles.continueButton}>
+              <Text style={newAccountStyles.continueButtonText}>
+                Crear cuenta
               </Text>
             </Pressable>
           </View>
