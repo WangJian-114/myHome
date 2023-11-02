@@ -10,7 +10,17 @@ import {
 
 import loginStyles from './style/loginStyles';
 
-const LoginRealState = () => {
+const LoginRealState = ({navigation}) => {
+  const getPassword = () => {
+    console.log('CONSOLE ejecute getPassword');
+    navigation.navigate('password-recovery');
+  };
+
+  const setNewAccount = () => {
+    console.log('CONSOLE ejecute new-account');
+    navigation.navigate('new-account');
+  };
+
   return (
     <>
       <SafeAreaView style={loginStyles.mainContainer}>
@@ -19,7 +29,7 @@ const LoginRealState = () => {
             <View style={loginStyles.logoContainer}>
               <Image
                 style={loginStyles.logo}
-                source={require('../../assets/img/logo.jpg')}
+                source={require('../../assets/img/logo.png')}
               />
             </View>
             <Text style={loginStyles.message}>
@@ -35,13 +45,13 @@ const LoginRealState = () => {
               style={loginStyles.loginTextInput}
               secureTextEntry
             />
-            <Pressable>
+            <Pressable onPress={() => getPassword()}>
               <Text style={loginStyles.forgetPass}>Olvide mi contraseña</Text>
             </Pressable>
           </View>
 
           <View>
-            <Pressable>
+            <Pressable onPress={() => setNewAccount()}>
               <Text style={loginStyles.NoAcount}>¿No tenes cuenta?</Text>
             </Pressable>
 
