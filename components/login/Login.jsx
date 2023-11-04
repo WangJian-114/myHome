@@ -1,12 +1,17 @@
 import React from 'react';
 import {Text, View, SafeAreaView, Pressable, Image} from 'react-native';
-
+import {useNavigation} from '@react-navigation/native';
 import loginStyles from './style/loginStyles';
 
-const Login = ({navigation}) => {
+const Login = () => {
+  const navigation = useNavigation();
   const loginRealState = () => {
     console.log('CONSOLE ejecute');
     navigation.navigate('login-real-state');
+  };
+
+  const goHome = () => {
+    navigation.navigate('home-tabs-navigation');
   };
 
   return (
@@ -22,7 +27,7 @@ const Login = ({navigation}) => {
             </View>
             <Text style={loginStyles.message}>Acceda y encuentre su hogar</Text>
             <Pressable
-              onPress={() => console.log('Ingreso User --')}
+              onPress={() => goHome()}
               style={loginStyles.googleButton}>
               <Text style={loginStyles.googleButtonText}>
                 Ingreso con Google

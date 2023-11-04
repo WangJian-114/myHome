@@ -8,6 +8,7 @@ import PasswordRecovery from './components/password/Password';
 import RecoveryCode from './components/password/RecoveryCode';
 import NewPassword from './components/password/NewPassword';
 import NewAccount from './components/newAccount/NewAccount';
+import BottomTabs from './components/navigation/Navigation';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,16 +17,23 @@ const App = () => {
   return (
     <>
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="login">
+        <Stack.Navigator
+          initialRouteName="login"
+          screenOptions={{
+            headerStyle: {
+              backgroundColor: '#159690',
+            },
+            headerTransparent: true,
+            headerTintColor: 'white',
+            headerTitleStyle: {
+              fontSize: 20,
+            },
+          }}>
           <Stack.Screen
             name="login"
             component={Login}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
             }}
           />
           <Stack.Screen
@@ -33,10 +41,6 @@ const App = () => {
             component={LoginRealState}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
             }}
           />
           <Stack.Screen
@@ -44,10 +48,6 @@ const App = () => {
             component={PasswordRecovery}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
             }}
           />
           <Stack.Screen
@@ -55,10 +55,6 @@ const App = () => {
             component={RecoveryCode}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
             }}
           />
           <Stack.Screen
@@ -66,10 +62,6 @@ const App = () => {
             component={NewPassword}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
             }}
           />
           <Stack.Screen
@@ -77,10 +69,15 @@ const App = () => {
             component={NewAccount}
             options={{
               title: '',
-              headerStyle: {
-                backgroundColor: '#159690',
-              },
-              headerTransparent: true,
+            }}
+          />
+          <Stack.Screen
+            name="home-tabs-navigation"
+            component={BottomTabs}
+            options={{
+              title: '',
+              // headerBackTitle: 'holalala',
+              headerShown: false,
             }}
           />
         </Stack.Navigator>
