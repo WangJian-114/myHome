@@ -53,7 +53,8 @@ const BottomTabs = ({navigation}) => {
         <Tab.Screen
           name="add-real-state"
           options={{
-            title: '',
+            headerTitle: 'Agregar una propiedad',
+            tabBarLabel: '',
             tabBarIcon: () => (
               <FontAwesome6
                 name="plus"

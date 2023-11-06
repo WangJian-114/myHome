@@ -24,6 +24,10 @@
 		<string>Entypo.ttf</string>
 		<string>AntDesign.ttf</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Necesito acceso a las fotos previas de la propiedad</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Necesito acceso a la camara para tomar foto de propiedad</string>
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
