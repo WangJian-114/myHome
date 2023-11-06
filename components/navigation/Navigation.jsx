@@ -1,12 +1,13 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Text, View, SafeAreaView, Pressable, Image} from 'react-native';
 import Home from '../home/Home';
 import NewRealState from '../newRealState/NewRealState';
 import Notification from '../notification/Notification';
 import User from '../user/User';
-
-import loginStyles from './style/loginStyles';
+import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
+import {Text, View, Image} from 'react-native';
 
 const BottomTabs = ({navigation}) => {
   const Tab = createBottomTabNavigator();
@@ -17,11 +18,81 @@ const BottomTabs = ({navigation}) => {
 
   return (
     <>
-      <Tab.Navigator>
-        <Tab.Screen name="home" component={Home} />
-        <Tab.Screen name="add-real-state" component={NewRealState} />
-        <Tab.Screen name="notification" component={Notification} />
-        <Tab.Screen name="user" component={User} />
+      <Tab.Navigator
+        sceneContainerStyle={{
+          backgroundColor: 'white',
+        }}
+        screenOptions={{
+          headerStyle: {
+            backgroundColor: '#159690',
+          },
+          tabBarStyle: {
+            backgroundColor: '#159690',
+          },
+          headerTintColor: 'white',
+          tabBarActiveTintColor: 'red',
+          tabBarInactiveTintColor: 'black',
+          tabBarActiveBackgroundColor: 'white',
+        }}
+        tabBarLabel={{
+          color: 'black',
+        }}>
+        <Tab.Screen
+          name="home"
+          options={{
+            title: '',
+            tabBarIcon: () => (
+              <FontAwesome6
+                name="house"
+                style={{fontSize: 20, color: 'black', marginTop: 12}}
+              />
+            ),
+          }}
+          component={Home}
+        />
+        <Tab.Screen
+          name="add-real-state"
+          options={{
+            title: '',
+            tabBarIcon: () => (
+              <FontAwesome6
+                name="plus"
+                style={{fontSize: 25, color: 'black', marginTop: 12}}
+              />
+            ),
+          }}
+          component={NewRealState}
+        />
+        <Tab.Screen
+          name="notification"
+          options={{
+            title: '',
+            tabBarIcon: () => (
+              <FontAwesome6
+                name="message"
+                style={{
+                  fontSize: 20,
+                  color: 'black',
+                  marginTop: 12,
+                }}
+              />
+            ),
+          }}
+          component={Notification}
+        />
+        <Tab.Screen
+          name="user"
+          options={{
+            title: '',
+            tabBarIcon: () => (
+              <FontAwesome6
+                name="user"
+                style={{fontSize: 20, color: 'black', marginTop: 12}}
+              />
+            ),
+          }}
+          component={User}
+        />
       </Tab.Navigator>
     </>
   );

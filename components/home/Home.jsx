@@ -1,7 +1,8 @@
 import React from 'react';
-import {Text, View, SafeAreaView, Pressable, Image} from 'react-native';
+import {Text, View, SafeAreaView, ScrollView} from 'react-native';
 
-import loginStyles from './style/loginStyles';
+import homeStyles from './style/homeStyles';
+import Card from '../card/Card';
 
 const Home = ({navigation}) => {
   const loginRealState = () => {
@@ -12,9 +13,15 @@ const Home = ({navigation}) => {
   return (
     <>
       <SafeAreaView>
-        <View>
-          <Text>Home Page</Text>
-        </View>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={homeStyles.homeContainer}>
+          <Text style={homeStyles.homeSubtitle}>2 Propiedades publicadas</Text>
+          <View style={homeStyles.cardSection}>
+            <Card />
+            <Card />
+          </View>
+        </ScrollView>
       </SafeAreaView>
     </>
   );
