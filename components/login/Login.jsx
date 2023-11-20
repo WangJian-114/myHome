@@ -11,7 +11,16 @@ const Login = () => {
   };
 
   const goHome = () => {
-    navigation.navigate('home-tabs-navigation');
+    console.log('CONSOLE ejecute');
+    navigation.navigate('home-tabs-navigation', {
+      userType: 'renter',
+    });
+  };
+
+  const goRealStateHome = () => {
+    navigation.navigate('home-tabs-navigation', {
+      userType: 'realstate',
+    });
   };
 
   return (
@@ -37,7 +46,7 @@ const Login = () => {
 
           <View>
             <Pressable
-              onPress={() => loginRealState()}
+              onPress={() => goRealStateHome()}
               style={loginStyles.realStateButton}>
               <Text style={loginStyles.realStateButtonText}>
                 Ingreso Inmobiliarias

@@ -1,7 +1,7 @@
 import React from 'react';
-import {Text, View, SafeAreaView, Pressable, Image} from 'react-native';
+import {Text, View, Pressable, TextInput, ScrollView} from 'react-native';
 
-import loginStyles from './style/loginStyles';
+import userStyles from './style/userStyles';
 
 const User = ({navigation}) => {
   const loginRealState = () => {
@@ -10,13 +10,68 @@ const User = ({navigation}) => {
   };
 
   return (
-    <>
-      <SafeAreaView>
-        <View>
-          <Text>User Page</Text>
-        </View>
-      </SafeAreaView>
-    </>
+    <ScrollView style={userStyles.userContainer}>
+      <Text style={userStyles.title}>Datos de la cuenta</Text>
+      <View style={userStyles.inputContainer}>
+        <Text style={userStyles.text}>Nombre inmobiliaria</Text>
+        <TextInput
+          placeholder="Nombre Inmobiliaria"
+          style={userStyles.textInput}
+        />
+      </View>
+      <View style={userStyles.inputContainer}>
+        <Text style={userStyles.text}>Email</Text>
+        <TextInput
+          placeholder="Nombre Inmobiliaria"
+          style={userStyles.textInput}
+        />
+      </View>
+      <View style={userStyles.inputContainer}>
+        <Text style={userStyles.text}>Contraseña</Text>
+        <TextInput
+          placeholder="Nombre Inmobiliaria"
+          style={userStyles.textInput}
+        />
+      </View>
+      <View style={userStyles.inputContainer}>
+        <Text style={userStyles.text}>Email de contacto</Text>
+        <TextInput
+          placeholder="Nombre Inmobiliaria"
+          style={userStyles.textInput}
+        />
+      </View>
+      <View style={userStyles.inputContainer}>
+        <Text style={userStyles.text}>Telefono</Text>
+        <TextInput
+          placeholder="Nombre Inmobiliaria"
+          style={userStyles.textInput}
+        />
+      </View>
+
+      <View>
+        <Pressable
+          onPress={() => loginRealState()}
+          style={userStyles.deleteButton}>
+          <Text style={userStyles.deleteButtonText}>Eliminar cuenta</Text>
+        </Pressable>
+      </View>
+      <View>
+        <Pressable
+          onPress={() => loginRealState()}
+          style={userStyles.quanlificationButton}>
+          <Text style={userStyles.quanlificationButtonText}>
+            Ver mis calificacion
+          </Text>
+        </Pressable>
+      </View>
+      <View>
+        <Pressable
+          onPress={() => loginRealState()}
+          style={userStyles.continueButton}>
+          <Text style={userStyles.continueButtonText}>Guardar</Text>
+        </Pressable>
+      </View>
+    </ScrollView>
   );
 };
 

@@ -6,10 +6,11 @@ import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import cardStyles from './style/cardStyles';
 
-const Card = ({navigation}) => {
+const Card = ({navigation, type}) => {
   return (
     <View style={cardStyles.cardContainer}>
       <View style={cardStyles.card}>
@@ -18,15 +19,29 @@ const Card = ({navigation}) => {
           source={require('../../assets/img/photo/d1.jpg')}
         />
         <View style={cardStyles.actionContainer}>
-          <View style={cardStyles.deleteAction}>
-            <AntDesign name="delete" style={{fontSize: 20, color: 'red'}} />
-          </View>
-          <View style={cardStyles.editAction}>
-            <FontAwesome6
-              name="pencil"
-              style={{fontSize: 20, color: 'black'}}
-            />
-          </View>
+          {type === 'renter' ? (
+            <View style={cardStyles.deleteAction}>
+              <Ionicons
+                name="star-outline"
+                style={{
+                  fontSize: 20,
+                  color: 'black',
+                }}
+              />
+            </View>
+          ) : (
+            <>
+              <View style={cardStyles.deleteAction}>
+                <AntDesign name="delete" style={{fontSize: 20, color: 'red'}} />
+              </View>
+              <View style={cardStyles.editAction}>
+                <FontAwesome6
+                  name="pencil"
+                  style={{fontSize: 20, color: 'black'}}
+                />
+              </View>
+            </>
+          )}
         </View>
       </View>
       <View style={cardStyles.cardContent}>
