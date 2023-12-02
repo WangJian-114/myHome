@@ -6,9 +6,17 @@ import Card from '../card/Card';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const RenterHome = ({navigation}) => {
-  const loginRealState = () => {
-    console.log('CONSOLE ejecute');
-    navigation.navigate('login-real-state');
+  const goFilterView = () => {
+    console.log('CONSOLE Filter');
+    navigation.navigate('filter');
+  };
+
+  const getRenterItems = () => {
+    console.log('CONSOLE FILTER POR ALQUILAR');
+  };
+
+  const getSellItems = () => {
+    console.log('CONSOLE FILTER POR SELL');
   };
 
   return (
@@ -19,18 +27,20 @@ const RenterHome = ({navigation}) => {
           style={homeStyles.homeContainer}>
           <View style={homeStyles.filterContainer}>
             <Pressable
-              onPress={() => loginRealState()}
+              onPress={() => getSellItems()}
               style={homeStyles.buyButton}>
               <Text style={homeStyles.buttonText}>COMPRAR</Text>
             </Pressable>
 
             <Pressable
-              onPress={() => loginRealState()}
+              onPress={() => getRenterItems()}
               style={homeStyles.rentButton}>
               <Text style={homeStyles.buttonText}>Alquilar</Text>
             </Pressable>
 
-            <View style={homeStyles.filterIcon}>
+            <Pressable
+              style={homeStyles.filterIcon}
+              onPress={() => goFilterView()}>
               <Ionicons
                 name="filter"
                 style={{
@@ -39,7 +49,7 @@ const RenterHome = ({navigation}) => {
                   textAlign: 'right',
                 }}
               />
-            </View>
+            </Pressable>
           </View>
           <View>
             <Text style={homeStyles.homeSubtitle}>
