@@ -23,7 +23,7 @@ const Card = ({type}) => {
       <View style={cardStyles.card}>
         <Image
           style={cardStyles.cardImage}
-          source={require('../../assets/img/photo/d1.jpg')}
+          source={require('../../../assets/img/photo/d1.jpg')}
         />
         <View style={cardStyles.actionContainer}>
           {type === 'renter' ? (

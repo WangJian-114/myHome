@@ -24,14 +24,18 @@ const Login = ({navigation}) => {
             <View style={passwordStyles.logoContainer}>
               <Image
                 style={passwordStyles.logo}
-                source={require('../../assets/img/logo.png')}
+                source={require('../../../assets/img/logo.png')}
               />
             </View>
             <Text style={passwordStyles.message}>
-              Escriba su nueva contraseña
+              ¿Olvidaste tu contraseña?
+            </Text>
+            <Text style={passwordStyles.messageText}>
+              ¡No te preocupes! Te enviaremos un email que te ayudará a resetear
+              tu contraseña
             </Text>
             <TextInput
-              placeholder="Contraseña"
+              placeholder="Correo electronico"
               style={passwordStyles.passwordTextInput}
               maxHeight={100}
             />

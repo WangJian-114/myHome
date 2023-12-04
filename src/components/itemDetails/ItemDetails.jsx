@@ -19,7 +19,7 @@ const ItemDetails = ({navigation, type}) => {
           <View style={itemDetailsStyles.card}>
             <Image
               style={itemDetailsStyles.cardImage}
-              source={require('../../assets/img/photo/d1.jpg')}
+              source={require('../../../assets/img/photo/d1.jpg')}
             />
           </View>
           <View style={itemDetailsStyles.cardContent}>

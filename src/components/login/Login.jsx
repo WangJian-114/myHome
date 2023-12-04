@@ -31,7 +31,7 @@ const Login = () => {
             <View style={loginStyles.logoContainer}>
               <Image
                 style={loginStyles.logo}
-                source={require('../../assets/img/logo.png')}
+                source={require('../../../assets/img/logo.png')}
               />
             </View>
             <Text style={loginStyles.message}>Acceda y encuentre su hogar</Text>

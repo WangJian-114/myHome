@@ -57,7 +57,7 @@ const NewRealState = ({navigation}) => {
             style={newRealStateStyles.image}
             source={
               tempUri === ''
-                ? require('../../assets/img/upload-image.webp')
+                ? require('../../../assets/img/upload-image.webp')
                 : {uri: tempUri}
             }
           />

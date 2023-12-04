@@ -2,15 +2,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Login from './components/login/Login';
-import LoginRealState from './components/login/LoginRealState';
-import PasswordRecovery from './components/password/Password';
-import RecoveryCode from './components/password/RecoveryCode';
-import NewPassword from './components/password/NewPassword';
-import NewAccount from './components/newAccount/NewAccount';
-import BottomTabs from './components/navigation/Navigation';
-import Filter from './components/filter/Filter';
-import ItemDetails from './components/itemDetails/ItemDetails';
+import Login from './src/components/login/Login';
+import LoginRealState from './src/components/login/LoginRealState';
+import PasswordRecovery from './src/components/password/Password';
+import RecoveryCode from './src/components/password/RecoveryCode';
+import NewPassword from './src/components/password/NewPassword';
+import NewAccount from './src/components/newAccount/NewAccount';
+import BottomTabs from './src/components/navigation/Navigation';
+import Filter from './src/components/filter/Filter';
+import ItemDetails from './src/components/itemDetails/ItemDetails';
 
 const Stack = createNativeStackNavigator();
 

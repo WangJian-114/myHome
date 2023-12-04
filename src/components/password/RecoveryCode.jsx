@@ -42,7 +42,7 @@ const Login = ({navigation}) => {
             <View style={passwordStyles.logoContainer}>
               <Image
                 style={passwordStyles.logo}
-                source={require('../../assets/img/logo.png')}
+                source={require('../../../assets/img/logo.png')}
               />
             </View>
             <Text style={passwordStyles.message}>Ingrese la clave</Text>

@@ -1,9 +1,17 @@
-import React from 'react';
-import {Text, View, SafeAreaView, ScrollView, Pressable} from 'react-native';
+import React, {useEffect} from 'react';
+import {
+  Text,
+  View,
+  SafeAreaView,
+  ScrollView,
+  Pressable,
+  Platform,
+} from 'react-native';
 
 import homeStyles from './style/homeStyles';
 import Card from '../card/Card';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import {PERMISSIONS, check, request} from 'react-native-permissions';
 
 const RenterHome = ({navigation}) => {
   const goFilterView = () => {
@@ -18,6 +26,26 @@ const RenterHome = ({navigation}) => {
   const getSellItems = () => {
     console.log('CONSOLE FILTER POR SELL');
   };
+
+  const checkLocationPermission = async () => {
+    let permissionStatus;
+
+    if (Platform.OS === 'ios') {
+      // permissionStatus = await check(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
+      permissionStatus = await request(PERMISSIONS.IOS.LOCATION_WHEN_IN_USE);
+    } else {
+      // permissionStatus = await check(PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION);
+      permissionStatus = await request(
+        PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+      );
+    }
+
+    console.log({permissionStatus});
+  };
+
+  useEffect(() => {
+    checkLocationPermission();
+  }, []);
 
   return (
     <>
